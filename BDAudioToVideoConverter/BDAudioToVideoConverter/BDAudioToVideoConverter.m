@@ -17,6 +17,11 @@
 @implementation BDAudioToVideoConverter
 
 + (void) convertAudioFileName:(NSString *)audioFileName audioFileExtenstion:(NSString *)audioFileExt withImagesArray:(NSArray<UIImage *> *)imagesArray videoFileName:(NSString *)videoFileName withCompletionBlock:(BDAudioToVideoConverterCompletionBlock)completionBlock{
+    NSURL *url = [[NSBundle mainBundle] URLForResource:audioFileName withExtension:audioFileExt];
+    [self convertAudioFileURL:url withImagesArray:imagesArray videoFileName:videoFileName withCompletionBlock:completionBlock];
+}
+
++ (void) convertAudioFileURL:(nonnull NSURL *)fileURL withImagesArray:(nonnull NSArray <UIImage *>*)imagesArray videoFileName:(nonnull NSString *)videoFileName withCompletionBlock:(nullable BDAudioToVideoConverterCompletionBlock)completionBlock{
     
     NSError *error = nil;
     
@@ -113,7 +118,7 @@
         AVMutableComposition* mixComposition = [AVMutableComposition composition];
         
         // audio input file...
-        NSURL    *audio_inputFileUrl = [[NSBundle mainBundle] URLForResource:audioFileName withExtension:audioFileExt];
+        NSURL    *audio_inputFileUrl = fileURL;
         
         // this is the video file that was just written above, full path to file is in --> videoOutputPath
         NSURL    *video_inputFileUrl = [NSURL fileURLWithPath:testVideoOutputPath];

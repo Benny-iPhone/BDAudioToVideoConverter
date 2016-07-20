@@ -14,5 +14,12 @@ and then
     //your code here
 }];
 
+or
+
+NSURL *sandboxFileURL; //use sandboxed file
+[BDAudioToVideoConverter convertAudioFileURL:sandboxFileURL withImagesArray:imagesArray videoFileName:@"my_video" withCompletionBlock:^(NSURL * _Nonnull fileURL) {
+
+}];
+
 inspired (and resources) from
 https://github.com/caferrara/img-to-video

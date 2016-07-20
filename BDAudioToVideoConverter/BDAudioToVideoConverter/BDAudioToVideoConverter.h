@@ -21,4 +21,12 @@ typedef void(^BDAudioToVideoConverterCompletionBlock)( NSURL * _Nonnull fileURL)
  */
 + (void) convertAudioFileName:(nonnull NSString *)audioFileName audioFileExtenstion:(nonnull NSString *)audioFileExt withImagesArray:(nonnull NSArray <UIImage *>*)imagesArray videoFileName:(nonnull NSString *)videoFileName withCompletionBlock:(nullable BDAudioToVideoConverterCompletionBlock)completionBlock;
 
+
+/**
+ *  @param fileURL - audio file local url
+ *  @param imagesArray  - should not be empty, video size will be based on first image size
+ *  @param videoFileName - the file name without extenstion, for example: @"my_video", the extenstion will be mp4
+ */
++ (void) convertAudioFileURL:(nonnull NSURL *)fileURL withImagesArray:(nonnull NSArray <UIImage *>*)imagesArray videoFileName:(nonnull NSString *)videoFileName withCompletionBlock:(nullable BDAudioToVideoConverterCompletionBlock)completionBlock;
+
 @end

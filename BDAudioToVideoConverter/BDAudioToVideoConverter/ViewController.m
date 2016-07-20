@@ -44,6 +44,7 @@
         
         _playVideoButton.enabled = YES;
     }];
+    
 }
 - (IBAction)playVideoAction:(id)sender {
     MPMoviePlayerViewController *controller = [[MPMoviePlayerViewController alloc] initWithContentURL:_videoFileURL];
