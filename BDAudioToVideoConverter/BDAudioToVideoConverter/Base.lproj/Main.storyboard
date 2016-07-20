@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9gm-hp-lhW">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAi-IL-frf">
+                                <rect key="frame" x="265" y="327" width="70" height="30"/>
+                                <state key="normal" title="play video"/>
+                                <connections>
+                                    <action selector="playVideoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FAS-YR-5ue"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVC-P1-7eh">
+                                <rect key="frame" x="258" y="244" width="85" height="30"/>
+                                <state key="normal" title="create video"/>
+                                <connections>
+                                    <action selector="createVideoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjG-GZ-Y2P"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2RU-CE-sZZ">
+                                <rect key="frame" x="30" y="544" width="540" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="49b-eI-9Pw"/>
+                                </constraints>
+                                <string key="text">Created by Benny Davidovitz
+http://xcoder.solutions/</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2RU-CE-sZZ" secondAttribute="bottom" constant="8" id="7XW-27-MYy"/>
+                            <constraint firstItem="2RU-CE-sZZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7hD-dY-OVR"/>
+                            <constraint firstItem="2RU-CE-sZZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="K8B-CN-LjC"/>
+                            <constraint firstItem="9gm-hp-lhW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RVy-Ju-laI"/>
+                            <constraint firstItem="nAi-IL-frf" firstAttribute="centerX" secondItem="9gm-hp-lhW" secondAttribute="centerX" id="Rme-ZK-lpN"/>
+                            <constraint firstItem="9gm-hp-lhW" firstAttribute="top" secondItem="TVC-P1-7eh" secondAttribute="bottom" constant="8" id="a9o-97-CQY"/>
+                            <constraint firstItem="nAi-IL-frf" firstAttribute="top" secondItem="9gm-hp-lhW" secondAttribute="bottom" constant="8" id="bDQ-FZ-zKp"/>
+                            <constraint firstItem="9gm-hp-lhW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sIW-tp-N7U"/>
+                            <constraint firstItem="TVC-P1-7eh" firstAttribute="centerX" secondItem="9gm-hp-lhW" secondAttribute="centerX" id="vZ3-QN-5az"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="9gm-hp-lhW" id="MIz-3b-euP"/>
+                        <outlet property="playVideoButton" destination="nAi-IL-frf" id="R0a-mr-vGv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="196"/>
+        </scene>
+    </scenes>
+</document>
